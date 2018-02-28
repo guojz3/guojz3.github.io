@@ -671,172 +671,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/Fiori-how-to-connect-multiple-backend-server/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jim Guo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170714141857819.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Welcome to Jim's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/06/Fiori-how-to-connect-multiple-backend-server/" itemprop="url">Fiori-Usefull Settings</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T11:49:17+08:00">
-                2017-09-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Fiori-Setting/" itemprop="url" rel="index">
-                    <span itemprop="name">Fiori Setting</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/09/06/Fiori-how-to-connect-multiple-backend-server/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://yoursite.com/2017/09/06/Fiori-how-to-connect-multiple-backend-server/" class="cy_cmt_count" data-xid="2017/09/06/Fiori-how-to-connect-multiple-backend-server/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/2017/09/06/Fiori-how-to-connect-multiple-backend-server/" class="leancloud_visitors" data-flag-title="Fiori-Usefull Settings">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="how-to-connect-multiple-backend-server"><a href="#how-to-connect-multiple-backend-server" class="headerlink" title="how to connect multiple backend server"></a>how to connect multiple backend server</h3><p>公司的前端fiori server目前只有一个开发机，开发机分两个client 120 130，120是开发环境，130有数据可以进行测试，所以我们就需要让前端这个开发环境连接两个不同的client来分别进行开发和测试，以下是前端的配置过程:</p>
-<ol>
-<li>SM59分别创建120和130的RFC连接</li>
-<li>分别为120和130创建别名<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017090614045918.png" alt=""></li>
-<li>然后就可以在服务中添加系统别名进行连接了，<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017090614060510.png" alt=""><br>不想在这配在SPRO中也可以<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017090614071062.png" alt=""><br>注意这里有两组checkbox<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170906140757638.png" alt=""><br>通过修改这个来确定服务的连接和metadata的连接.</li>
-</ol>
-<h3 id="Service-Maintenance-missing"><a href="#Service-Maintenance-missing" class="headerlink" title="Service Maintenance missing"></a>Service Maintenance missing</h3><p>在做Odata开发时发现SEGW的Sevice Maintenance是空的，每次测试服务的时候都要打开笔记打开那个难记的TCODE<code>/IWFND/MAINT_SERVICE</code>来打开Gateway的客户端。很不方便，下图这个位置，这里是我刚配上的LOCAL，点击SAP Gateway Client就能直接进到服务测试界面了。<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171226092115550.png" alt=""><br>配置过程如下：</p>
-<ol>
-<li>SM59创建RFC，这个相信大家都知道，不截图了</li>
-<li>创建系统Alias<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017122609240390.png" alt=""><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171226092531596.png" alt=""><br>3.<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171226092244441.png" alt=""><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171226092724286.png" alt=""></li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/31/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1220,6 +1054,187 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/JavaScript-NaoTu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jim Guo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170714141857819.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to Jim's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/23/JavaScript-NaoTu/" itemprop="url">JavaScript-NaoTu</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T08:48:07+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/08/23/JavaScript-NaoTu/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://yoursite.com/2017/08/23/JavaScript-NaoTu/" class="cy_cmt_count" data-xid="2017/08/23/JavaScript-NaoTu/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2017/08/23/JavaScript-NaoTu/" class="leancloud_visitors" data-flag-title="JavaScript-NaoTu">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>个人认为学习一门新知识的有效途径就是看前人整理的脑图，它可以做为学习的roadmap和也可以做为手边书进行查询备忘，Fiori开发过程中一定会用到JavaScript，下面是从网上down的一个系列的JavaScript脑图，FYI</p>
+</blockquote>
+<ul>
+<li><a href="#jump1">1、javascript数据类型</a></li>
+<li><a href="#jump2">2、javascript数组</a></li>
+<li><a href="#jump3">3、javascript运算符</a></li>
+<li><a href="#jump4">4、javascript正则表达式</a></li>
+<li><a href="#jump5">5、javascript字符串函数</a></li>
+<li><a href="#jump6">6、window对象</a></li>
+<li><a href="#jump7">7、DOM基本操作</a></li>
+<li><a href="#jump8">8、javascript变量</a></li>
+<li><a href="#jump9">9、javascript函数基础</a></li>
+<li><a href="#jump10">10、javascript流程控制</a></li>
+</ul>
+<h2 id="1、javascript数据类型"><a href="#1、javascript数据类型" class="headerlink" title="1、javascript数据类型"></a><span id="jump1">1、javascript数据类型</span></h2><p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170823090209796.png" alt=""></p>
+<h2 id="2、javascript数组"><a href="#2、javascript数组" class="headerlink" title="2、javascript数组"></a><span id="jump2">2、javascript数组</span></h2><p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017082309025484.png" alt=""></p>
+<h2 id="3、javascript运算符"><a href="#3、javascript运算符" class="headerlink" title="3、javascript运算符"></a><span id="jump3">3、javascript运算符</span></h2><p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170823090312556.png" alt=""></p>
+<h2 id="4、javascript正则表达式"><a href="#4、javascript正则表达式" class="headerlink" title="4、javascript正则表达式"></a><span id="jump4">4、javascript正则表达式</span></h2><p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170823090334619.png" alt=""></p>
+<h2 id="5、javascript字符串函数"><a href="#5、javascript字符串函数" class="headerlink" title="5、javascript字符串函数"></a><span id="jump5">5、javascript字符串函数</span></h2><p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170823090350144.png" alt=""></p>
+<h2 id="6、window对象"><a href="#6、window对象" class="headerlink" title="6、window对象"></a><span id="jump6">6、window对象</span></h2><p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170823090406292.png" alt=""></p>
+<h2 id="7、DOM基本操作"><a href="#7、DOM基本操作" class="headerlink" title="7、DOM基本操作"></a><span id="jump7">7、DOM基本操作</span></h2><p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170823090422233.png" alt=""></p>
+<h2 id="8、javascript变量"><a href="#8、javascript变量" class="headerlink" title="8、javascript变量"></a><span id="jump8">8、javascript变量</span></h2><p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170823090438921.png" alt=""></p>
+<h2 id="9、javascript函数基础"><a href="#9、javascript函数基础" class="headerlink" title="9、javascript函数基础"></a><span id="jump9">9、javascript函数基础</span></h2><p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170823090454126.png" alt=""></p>
+<h2 id="10、javascript流程控制"><a href="#10、javascript流程控制" class="headerlink" title="10、javascript流程控制"></a><span id="jump10">10、javascript流程控制</span></h2><p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170823090513148.png" alt=""></p>
+<p><em>没有找到图的原作者，如有侵权，请告知</em></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1270,7 +1285,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1281,7 +1296,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1292,7 +1307,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
