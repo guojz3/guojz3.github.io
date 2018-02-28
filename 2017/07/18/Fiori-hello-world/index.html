@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Fiori walkthrough," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="今天正式开始学习Firor了，我是SAP UI5的小白，也是Javascript的小白,所以学习过程中一些很简单很基础的问题都能浪费我大量时间找资料，如果身边有一Javascript高手,会节约非常多的时间。我基本是按官方的资料一步步看下去的，遇到不明白的就百度，然后再继续，进度比较慢，但很享受。https://sapui5.hana.ondemand.com/sdk/#docs/guide/">
+<meta name="keywords" content="Fiori walkthrough">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fiori-hello world">
+<meta property="og:url" content="http://yoursite.com/2017/07/18/Fiori-hello-world/index.html">
+<meta property="og:site_name" content="Welcome to Jim&#39;s Blog">
+<meta property="og:description" content="今天正式开始学习Firor了，我是SAP UI5的小白，也是Javascript的小白,所以学习过程中一些很简单很基础的问题都能浪费我大量时间找资料，如果身边有一Javascript高手,会节约非常多的时间。我基本是按官方的资料一步步看下去的，遇到不明白的就百度，然后再继续，进度比较慢，但很享受。https://sapui5.hana.ondemand.com/sdk/#docs/guide/">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171204170247694.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720165728282.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720162534551.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720162608785.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720131607890.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720172333166.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720172426949.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170718154921533.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720172935557.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720173012862.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720173301482.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720135001180.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720143702439.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170718160211773.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170718160319932.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170718160712102.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017071816170568.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170718161756493.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170801163737506.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170801164029859.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170801164552635.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017120516365161.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171205163602195.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171205092639689.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171205092718249.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171205092451172.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170721084436512.png">
+<meta property="og:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017072410294300.png">
+<meta property="og:updated_time" content="2017-12-05T08:42:52.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fiori-hello world">
+<meta name="twitter:description" content="今天正式开始学习Firor了，我是SAP UI5的小白，也是Javascript的小白,所以学习过程中一些很简单很基础的问题都能浪费我大量时间找资料，如果身边有一Javascript高手,会节约非常多的时间。我基本是按官方的资料一步步看下去的，遇到不明白的就百度，然后再继续，进度比较慢，但很享受。https://sapui5.hana.ondemand.com/sdk/#docs/guide/">
+<meta name="twitter:image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171204170247694.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/18/Fiori-hello-world/"/>
+
+
+
+
+
+  <title>Fiori-hello world | Welcome to Jim's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0a933f2d0877333caf78cbe836cc7b27";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome to Jim's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">欢迎欢迎</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/Fiori-hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jim Guo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170714141857819.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to Jim's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Fiori-hello world</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T15:35:44+08:00">
+                2017-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fiori-walkthrough/" itemprop="url" rel="index">
+                    <span itemprop="name">Fiori walkthrough</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/07/18/Fiori-hello-world/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/07/18/Fiori-hello-world/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2017/07/18/Fiori-hello-world/" class="leancloud_visitors" data-flag-title="Fiori-hello world">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<blockquote>
+<p>今天正式开始学习Firor了，我是SAP UI5的小白，也是Javascript的小白,所以学习过程中一些很简单很基础的问题都能浪费我大量时间找资料，如果身边有一Javascript高手,会节约非常多的时间。我基本是按官方的资料一步步看下去的，遇到不明白的就百度，然后再继续，进度比较慢，但很享受。<br><a href="https://sapui5.hana.ondemand.com/sdk/#docs/guide/" target="_blank" rel="external">https://sapui5.hana.ondemand.com/sdk/#docs/guide/</a></p>
+</blockquote>
+<p><em>声明：下面内容有一些是我从其它公众号或网站中摘的，如有侵权，请告知</em></p>
+<hr>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题<img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171204170247694.png" alt=""></h2><p>开始之前有几个问题需要搞清楚：</p>
+<h3 id="1-Fiori和SAPUI5是什么关系？"><a href="#1-Fiori和SAPUI5是什么关系？" class="headerlink" title="1. Fiori和SAPUI5是什么关系？"></a>1. Fiori和SAPUI5是什么关系？</h3><p>简单说，<strong>Fiori是基于HTML5和SAPUI5的，可以理解成Fiori是用SAPUI5开发的一个应用。</strong></p>
+<p>Fiori 是使用SAPUI5 的JS UI库并且遵照 SAP Fiori的设计指导开发的，使用SAP 云平台，WEBID可以快速实现新的应用场景。</p>
+<h3 id="2-Launchpad是个什么鬼？"><a href="#2-Launchpad是个什么鬼？" class="headerlink" title="2. Launchpad是个什么鬼？"></a>2. Launchpad是个什么鬼？</h3><p>个人理解这就是个平台组件，可以方便组织SAP Fiori APP和用户自己用SAPUI5开发的APP。</p>
+<h3 id="3-Firoi架构是什么样的？开发的APP发布到哪里？怎么跨平台-？"><a href="#3-Firoi架构是什么样的？开发的APP发布到哪里？怎么跨平台-？" class="headerlink" title="3. Firoi架构是什么样的？开发的APP发布到哪里？怎么跨平台 ？"></a>3. Firoi架构是什么样的？开发的APP发布到哪里？怎么跨平台 ？</h3><p>Launchpad是一些组件，UI5是一些JS库,这些都是装在frontend server上的（Frontend server有三种安装方式，其中一种就是和装在backend server上，没有深入了解），有这些Launchpad组件Fiori就可以和SAP交互了么？不，这里还有一个非常重要的组件，<strong>Gateway</strong> ，Launchpad包括我们开发的UI5 APP都是通过<strong>Gateway</strong>使用<strong>ODATA</strong>来与SAP商业套件进行连接交互的,可以理解成<strong>SAP Netweaver Gateway</strong>就是SAP基于<strong>ODATA</strong>协议（OData协议支持一系列流行的数据格式,包括JSON，XML。）开放出来的一个接口，这样就可以开发基于Web和Mobile的程序而不用考虑Web程序和Mobile应用是用什么技术开发的了，实现了SAP Fiori的跨平台特性。</p>
+<p>放一个图在这里<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720165728282.png" alt=""></p>
+<h3 id="4-WEBIDE-是干嘛的？"><a href="#4-WEBIDE-是干嘛的？" class="headerlink" title="4. WEBIDE 是干嘛的？"></a>4. WEBIDE 是干嘛的？</h3><p>SAP Web IDE 是基于 Eclipse 内核的在线开发 IDE，用来开发和扩展SAP Fiori APP,SAPUI5 APP，有专门针对物联网和HANA应用开发的控件，并且它非常容易扩展。可以使用在线的试用版本，但服务器在德国，访问的网速特别慢，也可以使用 Personal Edition，在本机启动和编写代码。</p>
+<p>与 Eclipse 相比，SAP Web IDE 有几个优点：</p>
+<ul>
+<li><strong>支持基于 XML View 的可视化操作，支持控件的拖放</strong>;<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720162534551.png" alt=""></li>
+<li>支持 Application Descriptor (manifest.json) 文件编辑的 Application Descriptor Editor:<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720162608785.png" alt=""></li>
+<li>根据 Template 生成项目文件的结构，减少开发的工作量。而且 SAP 已经停止对 Eclipse 开发插件的支持，所以后续 IDE 功能的更新将主要在 Web IDE。</li>
+<li>提供内置 Proxy，解决开发页面运行的 cross-origin 问题，方便开发测试</li>
+<li>SAP 对Eclipse开发所需要的SAP Developer Tools for Eclipse不再更新，所以一些代码框架比较陈旧，比如 Controller 的代码框架等等。</li>
+</ul>
+<p>缺点呢？感觉 IDE 中对中文输入的支持不好，支持中文显示，但输入比较困难。另外，操作友好性也还不够，比如代码剪贴不是很方便。</p>
+<p>WEBIDE 有版本：</p>
+<ul>
+<li>SAP Cloud Platform, Web IDE</li>
+<li>SAP Web IDE for SAP HANA</li>
+</ul>
+<h4 id="4-1-下载"><a href="#4-1-下载" class="headerlink" title="4.1 下载"></a>4.1 下载</h4><p><em>链接：<a href="http://pan.baidu.com/s/1boT3cnH" target="_blank" rel="external">http://pan.baidu.com/s/1boT3cnH</a> 密码：jgxm</em><br>这个是1.45.3 官方最新的现在是1.53.1，地址奉上：<br><a href="https://tools.hana.ondemand.com/#sapui5" target="_blank" rel="external">https://tools.hana.ondemand.com/#sapui5</a><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720131607890.png" alt=""><br>根据自己系统下载即可。<br></p>
+<h4 id="4-2-安装"><a href="#4-2-安装" class="headerlink" title="4.2 安装"></a>4.2 安装</h4><p>本地试用版几乎是傻版，不需要任何安装</p>
+<ol>
+<li>安装JDK,这个大家应该都装过N次就不说了。版本要求<br>1.7以上的都可以</li>
+<li>打开Orion<br>下载后解压到任何路径，以防万一，最好不要有中文，Orion提供了WEBIDE需要的后端的服务，它可以理解为一个文件管理器，可以给每个用户分配不同的空间管理不同的project，它可以关联本地的git库以实现版本控件。<br>我们要做的就是双击打开这个Orion服务<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720172333166.png" alt=""><br>出现下面这个窗口（不要关闭）就可以开始打开浏览器开发hello world喽<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720172426949.png" alt=""></li>
+<li>打开Chrome<br><a href="http://localhost:8080/webide/index.html" target="_blank" rel="external">http://localhost:8080/webide/index.html</a>出现登录界面，虽然是本地IDE，也要注册一个用户的，然后点击色子‘3点’进行登录。<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170718154921533.png" alt=""><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720172935557.png" alt=""><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720173012862.png" alt=""><br>至此，你已经可以开始开发工作了！<br><em>8080 端口是 Tomcat 的默认端口，如果需要变更 Web IDE 的端口，打开安装目录下面的 orion.ini 文件，将端口改了即可</em><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720173301482.png" alt=""><h3 id="5-WEBIDE-的架构是什么样的？"><a href="#5-WEBIDE-的架构是什么样的？" class="headerlink" title="5. WEBIDE 的架构是什么样的？"></a>5. WEBIDE 的架构是什么样的？</h3><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720135001180.png" alt=""><br>官网的一个图，意思就是使用WEBIDE开发的应该可以部署在不同的平台上（右边黑色部分），可以使用不同类型的数据源（下面），可扩展（左边）。<br><br>下面还有一个图，这个更容易看出来SAP WEBIDE在整个架构中的位置<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170720143702439.png" alt=""></li>
+</ol>
+<p>SAP HANA Cloud Connector通过简单的配置使SAP WEBIDE和SAP HANA cloud Platform连接到一个预置的系统。SAP Gateway 为SAP WEBIDE连接外部SAP系统提供了一个简单的连接。</p>
+<hr>
+<h2 id="step-1-Hello-world"><a href="#step-1-Hello-world" class="headerlink" title="step 1 Hello world"></a>step 1 Hello world</h2><p><a href="https://sapui5.hana.ondemand.com/sdk/#docs/guide/2680aa9b16c14a00b01261d04babbb39.html" target="_blank" rel="external">https://sapui5.hana.ondemand.com/sdk/#docs/guide/2680aa9b16c14a00b01261d04babbb39.html</a></p>
+<ol>
+<li>新建文件夹‘step1_hello_world’（这里不能有空格）<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170718160211773.png" alt=""></li>
+<li>新建文件 ‘index.html’<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170718160319932.png" alt=""><br>简单点就直接copy代码吧<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html &gt;</div><div class="line">&lt;html&gt;</div><div class="line">   &lt;head&gt;</div><div class="line">      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</div><div class="line">      &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">      &lt;title&gt;Walkthrough&lt;/title&gt;</div><div class="line">   &lt;/head&gt;</div><div class="line">   &lt;body&gt;</div><div class="line">      &lt;p&gt;Hello World&lt;/p&gt;</div><div class="line">   &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>貌似是写完了，但根本不能执行 T_T<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170718160712102.png" alt=""><br>原因就是缺少了项目的配置文件，如果参考模版或是其它应用创建会自动生成配置文件，但这里直接创建html是需要手工创建的</p>
+<ol>
+<li>新建文件 ‘neo-app.json’<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;welcomeFile&quot;: &quot;index.html&quot;,</div><div class="line">  &quot;routes&quot;: [</div><div class="line">    &#123;</div><div class="line">      &quot;path&quot;: &quot;/resources&quot;,</div><div class="line">      &quot;target&quot;: &#123;</div><div class="line">        &quot;type&quot;: &quot;service&quot;,</div><div class="line">        &quot;name&quot;: &quot;sapui5&quot;,</div><div class="line">        &quot;version&quot;: &quot;snapshot&quot;,</div><div class="line">        &quot;entryPath&quot;: &quot;/resources&quot;</div><div class="line">      &#125;,</div><div class="line">      &quot;description&quot;: &quot;SAPUI5 Resources&quot;</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      &quot;path&quot;: &quot;/test-resources&quot;,</div><div class="line">      &quot;target&quot;: &#123;</div><div class="line">        &quot;type&quot;: &quot;service&quot;,</div><div class="line">        &quot;name&quot;: &quot;sapui5&quot;,</div><div class="line">        &quot;entryPath&quot;: &quot;/test-resources&quot;</div><div class="line">      &#125;,</div><div class="line">      &quot;description&quot;: &quot;SAPUI5 Test Resources&quot;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>copy ,保存，绿色三角执行<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017071816170568.png" alt=""><br>传说中的hello world 出现了，从此又会了一门手艺:clap::clap:<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170718161756493.png" alt=""></p>
+<ul>
+<li>在进行UI开发前要注意查看服务器中Gateway的库的版本，以服务器的库版本为基准进行开发，否则有可能会导致EDI里开发所用到的控件传到服务器后报错，<em>TCODE:SICF</em><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170801163737506.png" alt=""><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170801164029859.png" alt=""><br>顺便也说一个如何查看WEBIDE的库版本<br><code>Ctrl+Shift+Alt+&#39;S&#39;</code><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170801164552635.png" alt=""></li>
+<li>前段开发部署到服务器上是以BSP Application的形式存在的</li>
+</ul>
+<p>**注意：这里其实是有3个版本的：<br></p>
+<ol>
+<li>一个是你开发的WEBIDE版本，这个在开发界面按<code>Ctrl+Shift+Alt+&#39;S&#39;</code>查看;<br><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017120516365161.png" alt=""></li>
+<li>还有一个是执行程序时按<code>Ctrl+Shift+Alt+&#39;S&#39;</code>查看（前提是index.html的src标签用是<code>src=&quot;https://sapui5.hana.ondemand.com/resources/sap-ui-core.js&quot;</code>）;<br></li>
+<li>然后是部署在server上的Gateway中库的版本,查看地址：http ://<server>:<port>/sap/public/bc/ui5_ui5/index.html**<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171205163602195.png" alt=""><br>这3者的作用相信你也能猜出来了，使用时需要注意，有奇怪的问题出现时考虑一下是不是版本差异造成的。</port></server></li>
+</ol>
+<p>延伸这个话题，如果我就是想用某一个控件怎么办呢？比如CustomTreeItem，这个控件在要求1.48以上才可能用的，但我们的WEBIDE是1.44，怎么办呢？<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171205092639689.png" alt=""><br>github( <a href="https://github.com/SAP/openui5/tree/master/src/sap.m/src/sap/m" target="_blank" rel="external">https://github.com/SAP/openui5/tree/master/src/sap.m/src/sap/m</a> )中找到这两个js文件(‘CustomListItem.js’和’CustomListItemRenderer.js’),down下来放到本地的sap.m库中即可。<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171205092718249.png" alt=""><br>我本地的地址是：E:\SAPWEBIDE\eclipse\plugins\com.sap.webide.orionplugin_1.53.1\ui5\1.44.12\resources\sap\m<br>供参考。</p>
+<p>如果你用的是cloud的webide会更方便一些，可以直接用‘Library Manager’下载引用<br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20171205092451172.png" alt=""></p>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:<br></h3><p>快捷键：<br><br>CTRL+ALT+B: 代码美化，相当于ABAP的pretty print<br><br>CTRL+/：行注释<br><br>CTRL+ALT+/: 块注释<br><br>Outline:这个功能特别适合快速定位代码块，很方便<br><br><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170721084436512.png" alt=""></p>
+<h3 id="升级SAP-Web-IDE-Personal-Edition"><a href="#升级SAP-Web-IDE-Personal-Edition" class="headerlink" title="升级SAP Web IDE Personal Edition"></a>升级SAP Web IDE Personal Edition</h3><p>如果发现新版本的WEBIDE Edition想要升级的话，升级方法很简单:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. 备份下面这三个文件（夹）</div><div class="line">config_master&lt;br&gt;</div><div class="line">serverworkspace&lt;br&gt;</div><div class="line">orion.ini&lt;br&gt;</div><div class="line">2. 下载新的WEBIDE，解压后用备份覆盖</div></pre></td></tr></table></figure></p>
+<p><img src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-2017072410294300.png" alt=""></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>简书：<br><br>翱翔云天SAP: <a href="http://www.jianshu.com/nb/10985020" target="_blank" rel="external">http://www.jianshu.com/nb/10985020</a><br><br>StoneWM:<br><a href="http://www.jianshu.com/nb/8494430" target="_blank" rel="external">http://www.jianshu.com/nb/8494430</a><br></p>
+<p>再分享几个学习Fiori非常有用的网址：<br><br>SAP Fiori Cloud Demo:<br><a href="https://www.sapfioritrial.com/sites?helpset=trial&amp;sap-client=001" target="_blank" rel="external">https://www.sapfioritrial.com/sites?helpset=trial&amp;sap-client=001</a><br><br>SCN:<br><a href="https://wiki.scn.sap.com/wiki/display/Fiori/SAP+Fiori+Cloud" target="_blank" rel="external">https://wiki.scn.sap.com/wiki/display/Fiori/SAP+Fiori+Cloud</a><br></p>
+<p>你可以在这个网址找到有哪些可用的 Fiori app:<a href="https://fioriappslibrary.hana.ondemand.com/sap/fix/externalViewer/" target="_blank" rel="external">https://fioriappslibrary.hana.ondemand.com/sap/fix/externalViewer/</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="./uploads/wechat-qcode.jpg" alt="Jim Guo wechat" style="width: 200px; max-width: 100%;"/>
+    <div>ex. subscribe to my blog by scanning my public wechat account</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Fiori-walkthrough/" rel="tag"># Fiori walkthrough</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/12/hexo_command/" rel="next" title="hexo 常用命令">
+                <i class="fa fa-chevron-left"></i> hexo 常用命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/18/Fiori-Step2-Bootstrap/" rel="prev" title="Fiori-Step2-Bootstrap">
+                Fiori-Step2-Bootstrap <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://osyt5kjax.bkt.clouddn.com/markdown-img-paste-20170714141857819.png"
+               alt="Jim Guo" />
+          <p class="site-author-name" itemprop="name">Jim Guo</p>
+           
+              <p class="site-description motion-element" itemprop="description">Hi~</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Fiori和SAPUI5是什么关系？"><span class="nav-number">1.1.</span> <span class="nav-text">1. Fiori和SAPUI5是什么关系？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Launchpad是个什么鬼？"><span class="nav-number">1.2.</span> <span class="nav-text">2. Launchpad是个什么鬼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Firoi架构是什么样的？开发的APP发布到哪里？怎么跨平台-？"><span class="nav-number">1.3.</span> <span class="nav-text">3. Firoi架构是什么样的？开发的APP发布到哪里？怎么跨平台 ？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-WEBIDE-是干嘛的？"><span class="nav-number">1.4.</span> <span class="nav-text">4. WEBIDE 是干嘛的？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-下载"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1 下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-安装"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2 安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-WEBIDE-的架构是什么样的？"><span class="nav-number">1.5.</span> <span class="nav-text">5. WEBIDE 的架构是什么样的？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-1-Hello-world"><span class="nav-number">2.</span> <span class="nav-text">step 1 Hello world</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips"><span class="nav-number">2.1.</span> <span class="nav-text">Tips:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级SAP-Web-IDE-Personal-Edition"><span class="nav-number">2.2.</span> <span class="nav-text">升级SAP Web IDE Personal Edition</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jim Guo</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt6NLBUa';
+      var conf = '5d7fddd06fa5ced61c345e7b9bed25df';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("Ns9PXyOfRgVrwITbJu7Bng42-gzGzoHsz", "PF3DJeessxXCul5kGtb9Meod");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
